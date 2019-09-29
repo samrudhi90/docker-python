@@ -1,0 +1,15 @@
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+  web-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+
+    ports:
+      - "3000:80"
+    
+    volumes:
+      - .:/app
+      
